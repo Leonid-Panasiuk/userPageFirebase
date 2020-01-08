@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <span>User Page Login</span>
+</mat-toolbar>
+
+<div class="container-fluid color-cont">
+    <div class="col-md-6 pt-5">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="row">
+                <div class="col-md-6 col-sm-5">
+                    <label style="color: teal;" for="email">Email</label>
+                    <input ngModel #email="ngModel" name="email" type="email" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-5">
+                    <label style="color: teal;" for="password">Password</label>
+                    <input ngModel #password="ngModel" name="password" type="password" class="form-control" required>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-3">
+                    <button [disabled]="!loginForm.valid" mat-raised-button color="warn">Login</button>
+                </div>
+                <div class="col-3">
+                    <button mat-raised-button color="primary" routerLink="/register">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

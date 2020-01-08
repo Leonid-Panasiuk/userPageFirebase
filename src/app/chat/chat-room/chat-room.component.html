@@ -1,0 +1,34 @@
+<div class="container-fluid chatbg">
+  <div class="row">
+    <a class="backbtn" mat-raised-button routerLink="/home">Back to user page</a>
+    <a style="color: tomato;" class="backbtn" mat-raised-button routerLink="/chat">Users List</a>
+    <ul *ngFor="let user of users" class="list-group list-group-flush listchat">
+      <li class="list-group-item lilist">
+        <img class="userChatPhoto"
+          [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">{{ user?.firstName }}
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+        <textarea
+        (keyDown.enter)="onEnter($event)"
+        [(ngModel)]="message"
+        >
+        </textarea>
+        <button mat-icon-button (click)="send()">
+          <mat-icon color="primary">send</mat-icon>
+        </button> 
+    </div>
+  </div>
+</div>
+<div class="feed">
+  <div *ngFor="let message of chat-room" class="message">
+    <app-message [chatMessage]=message></app-message>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
+

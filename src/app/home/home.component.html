@@ -1,0 +1,59 @@
+<mat-toolbar *ngIf="user" class="mainTooolbar" color="primary">
+    User Page Toolbar | 
+    <span class="toolbar-spacer"></span>
+    <button mat-mini-fab [matMenuTriggerFor]="avatarDropDown" color="primary" class="toolbar-avatar"
+        [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}"></button>
+</mat-toolbar>
+
+<mat-menu #avatarDropDown="matMenu">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ user?.displayName }}</mat-card-title>
+            <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+
+    <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Sign out</span>
+    </button>
+</mat-menu>
+<h3 style="text-align: center;" *ngIf="user">Hello: {{ user?.displayName }}</h3>
+<h3 style="text-align: center;font-size: 15px;">Today: {{today | date:'fullDate'}}</h3>
+
+
+<div class="container" *ngIf="user" style="background-color:#f2f2f2">
+    <span style="font-size: 16px; padding-right: 10px;">Update Profile Picture</span><img src="../../assets/images/face-24px.svg">
+    <div class="row pt-4">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input [(ngModel)]="updatedPhoto" class="form-control" placeholder="Paste url">
+                <small class="form-text text-muted">Paste your URL with new image here</small>
+            </div>
+            <button (click)="updatepic()" class="btn btn-info">Update</button>
+        </div>
+        <div class="col-md-4 offset-4">
+                    <div class="user-info">
+                            <button routerLink="/chat" mat-fab color="primary">Chat</button>
+                        <div class="profile-pic" [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}" *ngIf="user">
+                        </div>
+                    </div>
+                    <!-- <button (click)="info()">Info</button> -->
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="user" style="background-color:#f2f2f2">
+    <span style="font-size: 16px; padding-right: 10px;">Update User Name</span><img src="../../assets/images/accessibility-24px.svg">
+    <div class="row pt-4">
+        <div class="col-md-4 pb-3">
+            <div class="form-group">
+                <input [(ngModel)]="updateName" class="form-control" placeholder="Your Name">
+                <small class="form-text text-muted">Tap your name here</small>
+            </div>
+            <button (click)="updatename()" class="btn btn-info">Update</button>
+        </div>
+    </div>
+</div>
+
+
+

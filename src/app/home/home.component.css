@@ -1,0 +1,17 @@
+.user-info {
+    display: flex;
+    justify-content: center; 
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    -webkit-box-shadow: 7px 3px 68px -21px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 3px 68px -21px rgba(0,0,0,0.75);
+    box-shadow: 7px 3px 68px -21px rgba(0,0,0,0.75);
+}

@@ -1,0 +1,11 @@
+<div class="container-fluid chatbg">
+  <a class="backbtn" mat-raised-button routerLink="/home" >Back to user page</a>
+  <a class="backbtn" mat-raised-button routerLink="/chatroom" >Start Chat</a>
+  <ul  *ngFor="let user of users" class="list-group list-group-flush listchat">
+    <li class="list-group-item lilist mb-2">
+      <img class="userChatPhoto" [ngStyle]="{ 'background-image': 'url(' + user?.photoURL + ')'}">{{ user?.firstName }}
+      {{ user?.lastName }}
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
