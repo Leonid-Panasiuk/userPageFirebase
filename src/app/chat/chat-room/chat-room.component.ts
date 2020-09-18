@@ -22,7 +22,7 @@ export class ChatRoomComponent implements OnInit {
     this.chat.sendMessage(this.message);
     this.message = '';
   }
-  onEnter() {
+  onEnter($event) {
       this.send();
   }
 }
