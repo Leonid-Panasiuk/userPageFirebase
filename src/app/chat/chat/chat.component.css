@@ -2,7 +2,6 @@
 .userChatPhoto {
     width: 80px;
     height: 80px;
-    margin-right: 25px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,8 +22,7 @@
 }
 .lilist {
     background-color: #f2f2f2;
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
 }
 
 .chatbg {
@@ -34,4 +32,8 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
