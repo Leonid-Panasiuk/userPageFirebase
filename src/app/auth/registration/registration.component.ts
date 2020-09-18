@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
   }
   createUser(frm) {
     this.auth.createUser(frm.value);
+    alert('Registration successful');
   }
 
 }
