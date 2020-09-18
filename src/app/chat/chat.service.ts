@@ -16,10 +16,10 @@ export class ChatService {
   chatMessages: FirebaseListObservable<ChatMessage[]>;
 
   constructor(
-    private afAuth: AngularFireAuth,
-    private db: AngularFirestore,
-    private dbChat: AngularFireDatabase,
-    private auth: AuthService
+    public afAuth: AngularFireAuth,
+    public db: AngularFirestore,
+    public dbChat: AngularFireDatabase,
+    public auth: AuthService
   ) {
     this.afAuth.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {

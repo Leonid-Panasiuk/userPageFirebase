@@ -10,7 +10,7 @@ export class ChatRoomComponent implements OnInit {
   @Output() sendMessage = new EventEmitter<string>();
   users;
   message: string;
-  constructor(private chat: ChatService) { }
+  constructor(public chat: ChatService) { }
 
   ngOnInit() {
     this.chat.getAll().subscribe((users) => {
